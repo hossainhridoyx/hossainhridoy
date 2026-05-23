@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hossain Hridoy | Official Website</title>
+  <meta name="description" content="Official website of Hossain Hridoy (হোসাইন হৃদয়) - Animation YouTuber, Creator, Owner of HridoyTV.top & AiPhotoz.vercel.app from Bangladesh." />
+  <meta name="keywords" content="Hossain Hridoy, হোসাইন হৃদয়, HridoyTV, AiPhotoz, Bangladesh YouTuber, Animation YouTuber, HridoyTV.top, AiPhotoz.vercel.app" />
+  <meta name="author" content="Hossain Hridoy" />
+  <link rel="icon" href="https://i.ibb.co/nq290yDJ/ac2a84b70aa2.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #ffffff;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo, .btn, .footer-logo { font-family: 'Outfit', sans-serif; }
+
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      animation: pulseBg 8s infinite alternate;
+    }
+    body::before { background: rgba(0, 200, 83, 0.12); top: -150px; left: -150px; }
+    body::after { background: rgba(0, 255, 128, 0.08); bottom: -150px; right: -150px; }
+
+    @keyframes pulseBg {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    header {
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      animation: slideDown 0.8s ease-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .logo { font-size: 26px; font-weight: 800; color: #00a651; }
+    .logo span { color: #111; }
+    nav a {
+      text-decoration: none;
+      margin-left: 25px;
+      color: #222;
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 16px;
+      position: relative;
+    }
+    nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: #00a651; transition: 0.3s; }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #00a651; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 8% 60px;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .hero-img {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      animation: floatGlow 5s ease-in-out infinite;
+      margin-bottom: 10px;
+    }
+    .hero-img::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: conic-gradient(#00a651, #e9fff2, #00ff80, #00a651);
+      animation: spinRing 4s linear infinite;
+      box-shadow: 0 0 35px rgba(0, 166, 81, 0.4);
+      z-index: 0;
+    }
+    .hero-img::after {
+      content: "";
+      position: absolute;
+      width: 265px;
+      height: 265px;
+      background: #ffffff;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .hero-img img {
+      position: relative;
+      z-index: 2;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .hero-img:hover img { transform: scale(1.08) rotate(3deg); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+
+    @keyframes spinRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes floatGlow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+
+    .hero-content { max-width: 750px; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e9fff2;
+      color: #00a651;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
+
+    .hero-content h1 { font-size: 55px; line-height: 1.2; margin-bottom: 15px; font-weight: 800; color: #111; }
+    .hero-content h1 span {
+      background: linear-gradient(45deg, #00a651, #00d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-content p { font-size: 17px; line-height: 1.8; color: #555; margin-bottom: 30px; padding: 0 10px; }
+
+    .buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+    .btn-primary { background: #00a651; color: white; box-shadow: 0 8px 20px rgba(0,166,81,0.3); }
+    .btn-primary:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 12px 25px rgba(0,166,81,0.4); }
+    .btn-outline { border: 2px solid #00a651; color: #00a651; background: #ffffff; }
+    .btn-outline:hover { background: #00a651; color: white; transform: translateY(-5px) scale(1.03); box-shadow: 0 8px 20px rgba(0,166,81,0.2); }
+
+    section { padding: 90px 8%; }
+
+    .section-title { text-align: center; margin-bottom: 45px; }
+    .section-title h2 { font-size: 40px; margin-bottom: 8px; font-weight: 800; color: #111; }
+    .section-title p { color: #666; font-size: 16px; font-weight: 500; }
+
+    .about-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 166, 81, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .about-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .about-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 166, 81, 0.08); border-color: rgba(0, 166, 81, 0.3); }
+
+    .about-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: #e9fff2;
+      color: #00a651;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .about-item:hover .about-icon { background: #00a651; color: #fff; }
+
+    .about-text { display: flex; flex-direction: column; gap: 2px; }
+    .about-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+    .about-value { font-size: 14px; font-weight: 700; color: #222; }
+    .about-value a { color: #00a651; text-decoration: none; font-weight: 700; transition: 0.2s; word-break: break-all; }
+    .about-value a:hover { color: #008040; text-decoration: underline; }
+
+    /* First website card spans full width */
+    .about-item.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: linear-gradient(145deg, #ffffff, #f4fff8);
+      border-radius: 20px;
+      padding: 25px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,166,81,0.1);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .project-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 15px 35px rgba(0, 166, 81, 0.12); border-color: rgba(0,166,81,0.3); }
+
+    .project-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .project-logo {
+      width: 55px; height: 55px; object-fit: contain; border-radius: 12px;
+      background: white; padding: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s;
+    }
+    .project-card:hover .project-logo { transform: rotate(-5deg) scale(1.1); }
+    .project-card h3 { font-size: 22px; margin: 0; font-weight: 800; color: #111; }
+    .project-card p { color: #555; font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+
+    .project-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: #00a651; text-decoration: none; font-weight: 700; font-size: 15px; transition: 0.3s;
+    }
+    .project-link i { transition: 0.3s; }
+    .project-link:hover { color: #008040; }
+    .project-link:hover i { transform: translate(3px, -3px); }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 40px;
+      background: #ffffff;
+      color: #333;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: pointer;
+    }
+
+    .social-btn:not(.imo) { width: 45px; height: 45px; padding: 0; }
+    .social-btn i { font-size: 18px; }
+
+    .social-btn.facebook:hover { background: #1877F2; color: #fff; border-color: #1877F2; transform: translateY(-3px); }
+    .social-btn.tiktok:hover { background: #000000; color: #fff; border-color: #000000; transform: translateY(-3px); }
+    .social-btn.telegram:hover { background: #0088cc; color: #fff; border-color: #0088cc; transform: translateY(-3px); }
+
+    /* IMO — গাঢ় নীল ব্যাকগ্রাউন্ড */
+    .social-btn.imo {
+      padding: 10px 22px;
+      cursor: default;
+      background: #1a237e;
+      color: #ffffff;
+      border-color: #1a237e;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .social-btn.imo:hover {
+      background: #0d1b6e;
+      color: #fff;
+      border-color: #0d1b6e;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(26, 35, 126, 0.35);
+    }
+
+    footer {
+      padding: 50px 8% 40px;
+      text-align: center;
+      background: linear-gradient(to top, #e9fff2, #ffffff);
+      color: #555;
+      font-size: 15px;
+      border-top: 1px solid rgba(0,166,81,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .footer-logo { font-size: 24px; font-weight: 800; color: #111; margin-bottom: 5px; }
+    .footer-logo span { color: #00a651; }
+    .footer-text { font-weight: 500; color: #666; }
+    .heart { color: #ff3b3b; display: inline-block; animation: heartbeat 1.5s infinite; margin: 0 4px; }
+    @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+
+    @media(max-width: 992px) {
+      .hero-content h1 { font-size: 45px; }
+      .hero-img { width: 250px; height: 250px; }
+      .hero-img::after { width: 236px; height: 236px; }
+      .hero-img img { width: 220px; height: 220px; }
+    }
+    @media(max-width: 768px) {
+      header { padding: 15px 5%; }
+      nav { display: none; }
+      .hero { padding: 120px 5% 50px; gap: 20px; }
+      .hero-img { width: 220px; height: 220px; }
+      .hero-img::after { width: 206px; height: 206px; }
+      .hero-img img { width: 190px; height: 190px; }
+      .hero-content h1 { font-size: 38px; }
+      section { padding: 70px 5%; }
+      .section-title h2 { font-size: 34px; }
+      .about-wrapper { padding: 20px; }
+      .about-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+    }
+    @media(max-width: 480px) {
+      .hero-content h1 { font-size: 32px; }
+      .hero-content p { font-size: 15px; }
+      .btn { width: 100%; justify-content: center; }
+      .socials { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Hossain <span>Hridoy</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#social">Connect</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-img reveal delay-1">
+      <img src="https://i.ibb.co/nq290yDJ/ac2a84b70aa2.jpg" alt="Hossain Hridoy">
+    </div>
+    <div class="hero-content reveal delay-2">
+      <div class="tag">
+        <i class="fa-solid fa-bolt"></i> Official Website
+      </div>
+      <h1>
+        Hossain <span>Hridoy</span><br>
+        (হোসাইন হৃদয়)
+      </h1>
+      <p>
+        Hi! I'm Hossain Hridoy, a Bangladeshi creator, animation YouTuber,
+        and digital project owner. I am the founder and owner of
+        HridoyTV.top and AiPhotoz.vercel.app. I love creating websites, media projects, AI content,
+        and creative digital experiences.
+      </p>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-rocket"></i> View Projects
+        </a>
+        <a href="#social" class="btn btn-outline">
+          <i class="fa-solid fa-comment-dots"></i> Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title reveal">
+      <h2>About Me</h2>
+      <p>Quick facts about Hossain Hridoy</p>
+    </div>
+
+    <div class="about-wrapper reveal delay-1">
+      <div class="about-grid">
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-user"></i></div>
+          <div class="about-text">
+            <span class="about-label">Full Name</span>
+            <span class="about-value">Hossain Hridoy</span>
+          </div>
+        </div>
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-cake-candles"></i></div>
+          <div class="about-text">
+            <span class="about-label">Age</span>
+            <span class="about-value">16+ Years (2026)</span>
+          </div>
+        </div>
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-school"></i></div>
+          <div class="about-text">
+            <span class="about-label">Education</span>
+            <span class="about-value">9th Grade Student</span>
+          </div>
+        </div>
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="about-text">
+            <span class="about-label">Profession</span>
+            <span class="about-value">Animation Creator</span>
+          </div>
+        </div>
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-star-and-crescent"></i></div>
+          <div class="about-text">
+            <span class="about-label">Religion</span>
+            <span class="about-value">Muslim (মুসলিম)</span>
+          </div>
+        </div>
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-language"></i></div>
+          <div class="about-text">
+            <span class="about-label">Language</span>
+            <span class="about-value">Bengali (বাংলা)</span>
+          </div>
+        </div>
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="about-text">
+            <span class="about-label">Birth Place</span>
+            <span class="about-value">Netrakona, BD</span>
+          </div>
+        </div>
+
+        <div class="about-item">
+          <div class="about-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="about-text">
+            <span class="about-label">Nationality</span>
+            <span class="about-value">Bangladeshi</span>
+          </div>
+        </div>
+
+        <!-- নতুন: প্রথম ওয়েবসাইট -->
+        <div class="about-item full-width">
+          <div class="about-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+          <div class="about-text">
+            <span class="about-label">1st Website Online</span>
+            <span class="about-value">
+              <a href="http://hkjavaappstore.wapaxo.com" target="_blank">
+                hkjavaappstore.wapaxo.com
+              </a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title reveal">
+      <h2>Main Projects</h2>
+      <p>Official digital products and platforms</p>
+    </div>
+
+    <div class="projects">
+      <div class="project-card reveal delay-1">
+        <div class="project-header">
+          <img class="project-logo" src="https://iili.io/CH7Jydl.md.png" alt="HridoyTV Logo">
+          <h3>HridoyTV</h3>
+        </div>
+        <p>HridoyTV.top is one of the main projects created and owned by Hossain Hridoy. A digital streaming and entertainment platform.</p>
+        <a href="https://HridoyTV.top" target="_blank" class="project-link">
+          Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+
+      <div class="project-card reveal delay-2">
+        <div class="project-header">
+          <img class="project-logo" src="https://iili.io/CH7dpCg.md.png" alt="AiPhotoz Logo">
+          <h3>AiPhotoz</h3>
+        </div>
+        <p>AiPhotoz.vercel.app is an AI-based creative platform developed and managed by Hossain Hridoy.</p>
+        <a href="https://AiPhotoz.vercel.app" target="_blank" class="project-link">
+          Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="social">
+    <div class="section-title reveal">
+      <h2>Connect With Me</h2>
+      <p>Follow my official accounts</p>
+    </div>
+
+    <div class="socials">
+      <a href="https://facebook.com/hossainhridoyx" target="_blank" class="social-btn facebook reveal delay-1" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://tiktok.com/@hossainhridoyx" target="_blank" class="social-btn tiktok reveal delay-2" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://t.me/hossain_hridoy" target="_blank" class="social-btn telegram reveal delay-3" title="Telegram">
+        <i class="fab fa-telegram"></i>
+      </a>
+      <!-- IMO — গাঢ় নীল ব্যাকগ্রাউন্ড + "imo" টেক্সট -->
+      <div class="social-btn imo reveal delay-4" title="IMO Username">
+        <i class="fa-solid fa-comments"></i> imo: hossainhridoy
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Hossain <span>Hridoy</span></div>
+    <div class="footer-text">
+      Designed &amp; Developed with <i class="fa-solid fa-heart heart"></i> by Hossain Hridoy
+    </div>
+    <div class="footer-text" style="font-size: 13px; margin-top: 5px; color: #888;">
+      &copy; 2026 All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 50;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal();
+  </script>
+</body>
+</html>
